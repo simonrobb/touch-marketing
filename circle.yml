@@ -1,0 +1,51 @@
+machine:
+  environment:
+    GCLOUD_PROJECT: "touch-farm"
+    IMAGE_NAME: "gcr.io/touch-farm/marketing"
+
+  services:
+    - docker
+
+general:
+  branches:
+    only:
+      - develop
+      - production
+      - master
+
+dependencies:
+  pre:
+    # Install node modules
+    - npm install
+
+    # Download App Engine SDK
+    - curl -o $HOME/google_appengine_1.9.30.zip https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.30.zip
+    - unzip -q -d $HOME $HOME/google_appengine_1.9.30.zip
+
+    # Retrieve our secrets from the CircleCI environment
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/client-secret.json
+
+    # Authenticate gcloud
+    - gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
+
+    # Make sure gcloud is up to date
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update kubectl
+
+    # Build the application
+    - npm run build
+
+  override:
+    - docker build -t $IMAGE_NAME:$CIRCLE_SHA1 .
+
+deployment:
+  staging:
+    owner: touch-tech
+    branch: master
+    commands:
+      # Set gcloud project and cluster
+      - gcloud config set compute/zone asia-east1-a
+      - gcloud config set project $GCLOUD_PROJECT
+      - gcloud container clusters get-credentials touch-staging
+
+      # Push image
+      - gcloud docker push $IMAGE_NAME:$CIRCLE_SHA1

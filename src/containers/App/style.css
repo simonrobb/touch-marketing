@@ -1,0 +1,9 @@
+.header {
+  margin-top: 45px;
+  margin-bottom: 65px;
+
+  img {
+    height: 100px;
+    margin: 0 auto;
+  }
+}

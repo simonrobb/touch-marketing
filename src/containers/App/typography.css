@@ -1,0 +1,32 @@
+body {
+  font-family: 'Aileron', sans-serif;
+  font-size: 14px;
+  color: $bodyColor;
+}
+
+h2 {
+  font-size: 24px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+h3 {
+  font-size: 20px;
+  font-weight: 600;
+  font-style: italic;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+:global(.link) {
+  color: $linkColor;
+
+  &:global(.active) {
+    font-weight: 600;
+    color: inherit;
+    cursor: pointer;
+  }
+}
