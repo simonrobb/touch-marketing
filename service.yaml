@@ -3,7 +3,6 @@ kind: Service
 metadata:
   name: marketing
 spec:
-  type: LoadBalancer
   ports:
   - name: http
     targetPort: 9000
