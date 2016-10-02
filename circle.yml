@@ -42,10 +42,9 @@ deployment:
     owner: touch-tech
     branch: master
     commands:
-      # Set gcloud project and cluster
+      # Set gcloud project
       - gcloud config set compute/zone asia-east1-a
       - gcloud config set project $GCLOUD_PROJECT
-      - gcloud container clusters get-credentials touch-staging
 
       # Push image
       - gcloud docker push $IMAGE_NAME:$CIRCLE_SHA1
