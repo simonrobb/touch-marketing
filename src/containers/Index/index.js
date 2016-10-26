@@ -3,6 +3,10 @@ import Header from '../../components/Header'
 import styles from './style.css'
 
 class Index extends Component {
+  handleRegisterClick() {
+    openPopup()
+  }
+
   render() {
     return <div className={styles.container}>
       <Header className={styles.header} />
@@ -18,7 +22,7 @@ class Index extends Component {
 
               <div className={styles.register}>
                 <p className={styles.instruction}>Touch Farm is currently developing an inexpensive soil sensing solution for progressive farmers. You can register for updates and early entry to our testing programme by providing your email address.</p>
-                <button className={styles.button}>Register now</button>
+                <button className={styles.button} onClick={() => this.handleRegisterClick()}>Register now</button>
               </div>
             </div>
           </section>
