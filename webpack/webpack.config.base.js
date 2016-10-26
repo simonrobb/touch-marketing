@@ -34,7 +34,7 @@ module.exports = options => ({
 				include: options.srcPath,
 				'loaders': !options.isDev ? [
 					'style-loader',
-					'css-loader?modules&importLoaders=1!postcss-loader&camelCase=dashes'
+					'css-loader?modules&camelCase=dashes&importLoaders=1!postcss-loader'
 				] : [
 					'style-loader?sourceMaps', 
 					'css-loader?modules&importLoaders=1&camelCase=dashes',
