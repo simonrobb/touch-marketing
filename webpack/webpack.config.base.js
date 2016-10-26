@@ -34,10 +34,10 @@ module.exports = options => ({
 				include: options.srcPath,
 				'loaders': !options.isDev ? [
 					'style-loader',
-					'css-loader?modules&importLoaders=1!postcss-loader'
+					'css-loader?modules&importLoaders=1!postcss-loader&camelCase=dashes'
 				] : [
 					'style-loader?sourceMaps', 
-					'css-loader?modules&importLoaders=1',
+					'css-loader?modules&importLoaders=1&camelCase=dashes',
 					'postcss-loader',
 				]
 			},

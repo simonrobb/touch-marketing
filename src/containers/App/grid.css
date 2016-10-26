@@ -1,3 +1,5 @@
+@lost gutter 27px;
+
 section {
-  lost-center: 960px 15px flex;
+  lost-center: 1280px 15px flex;
 }

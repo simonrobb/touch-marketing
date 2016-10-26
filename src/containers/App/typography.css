@@ -1,13 +1,19 @@
+body,
+button,
+input {
+  font-family: 'Source Sans Pro', sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
 body {
-  font-family: 'Aileron', sans-serif;
   font-size: 14px;
   color: $bodyColor;
 }
 
 h2 {
-  font-size: 24px;
-  font-weight: 600;
-  font-style: italic;
+  font-size: 48px;
+  font-weight: 200;
+  letter-spacing: -0.012em;
 }
 
 h3 {
