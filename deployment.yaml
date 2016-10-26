@@ -14,7 +14,7 @@ spec:
     spec:
       containers:
         - name: marketing
-          image: gcr.io/touch-farm/marketing:b28281c854c7515cb4c46695523cf7ea54c6aed4
+          image: gcr.io/touch-farm/marketing:110e079753747b9050c35b8491e3c52f72ee5837
           imagePullPolicy: IfNotPresent
           ports:
             - containerPort: 9000
