@@ -13,7 +13,7 @@ const Header = (props) => {
 
   return <div className={classNames(classes)}>
     <section className={styles.header}>
-      <img src={logo} alt="Touch Farm" />
+      <IndexLink to="/"><img src={logo} alt="Touch Farm" /></IndexLink>
     </section>
   </div>
 }

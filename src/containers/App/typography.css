@@ -61,8 +61,12 @@ h2 {
   @mixin heading2
 }
 
+p {
+  @mixin body1;
+}
+
 a {
-  text-decoration: none;
+  text-decoration: underline;
   color: inherit;
 }
 

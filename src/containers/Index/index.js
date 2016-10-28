@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router'
 import Header from '../../components/Header'
 import styles from './style.css'
 
@@ -21,8 +22,9 @@ class Index extends Component {
               <p className={styles.explain}>Our soil and atmospheric sensors are perfectly paired with intuitive software. Tend your crop precisely and efficiently.</p>
 
               <div className={styles.register}>
-                <p className={styles.instruction}>Touch Farm is currently developing an inexpensive soil sensing solution for progressive farmers. You can register for updates and early entry to our testing programme by providing your email address.</p>
+                <p className={styles.instruction}>Touch Farm is currently developing an inexpensive soil sensing solution for progressive farmers. You can register for updates and early entry to our testing programme by registering your email address.</p>
                 <button className={styles.button} onClick={() => this.handleRegisterClick()}>Register now</button>
+                <span className={styles.learn}>or, <Link to="/info">learn more</Link></span>
               </div>
             </div>
           </section>
