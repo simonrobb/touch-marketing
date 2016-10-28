@@ -9,7 +9,7 @@ class Index extends Component {
 
   render() {
     return <div className={styles.container}>
-      <Header className={styles.header} />
+      <Header transparent={true} className={styles.header} />
       <div className={styles.topGradient} />
       <div className={styles.bottomGradient} />
 

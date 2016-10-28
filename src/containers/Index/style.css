@@ -20,15 +20,15 @@
 }
 
 .pitch {
-  font-weight: 300;
+  @mixin heading2;
 }
 
 .explain {
-  font-weight: 400;
+  @mixin body1;
 }
 
 .instruction {
-  font-weight: 400;
+  @mixin body2;
 }
 
 .button {
@@ -58,22 +58,15 @@
   }
 
   .pitch {
-    font-size: 48px;
-    line-height: 60px;
-    letter-spacing: -0.012em;
     margin-bottom: 20px;
   }
 
   .explain {
-    font-size: 24px;
-    line-height: 32px;
     margin-bottom: 110px;
   }
 
   .instruction {
-    font-size: 18px;
-    line-height: 26px;
-    margin-bottom: 37px
+    margin-bottom: 37px;
   }
 
   .button {
@@ -91,23 +84,14 @@
   }
 
   .pitch {
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -0.012em;
     margin-bottom: 20px;
   }
 
   .explain {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
     margin-bottom: 50px;
   }
 
   .instruction {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     margin-bottom: 20px
   }
 
@@ -126,23 +110,14 @@
   }
 
   .pitch {
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -0.012em;
     margin-bottom: 20px;
   }
 
   .explain {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
     margin-bottom: 50px;
   }
 
   .instruction {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     margin-bottom: 20px
   }
 
@@ -161,23 +136,14 @@
   }
 
   .pitch {
-    font-size: 36px;
-    line-height: 44px;
-    letter-spacing: -0.012em;
     margin-bottom: 20px;
   }
 
   .explain {
-    font-size: 20px;
-    font-weight: 400;
-    line-height: 28px;
     margin-bottom: 50px;
   }
 
   .instruction {
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 20px;
     margin-bottom: 20px
   }
 

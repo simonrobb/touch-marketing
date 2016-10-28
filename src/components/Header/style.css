@@ -1,9 +1,19 @@
+.container {
+  background: #4B5248;
+}
+
 .header {
   display: flex;
   align-items: center;
 }
 
 @media screen and (min-width: 768px) {
+  .container {
+    &.transparent {
+      background: none;
+    }
+  }
+
   .header {
     height: 50px;
 
@@ -16,7 +26,6 @@
 @media screen and (max-width: 767px) {
   .header {
     height: 40px;
-    background: #4B5248;
 
     img {
       width: 120px;

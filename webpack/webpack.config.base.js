@@ -1,4 +1,5 @@
 const autoprefixer = require('autoprefixer')
+const postcssMixins = require('postcss-mixins')
 const postcssNested = require('postcss-nested')
 const postcssSimpleVars = require('postcss-simple-vars');
 const postcssColorFunction = require('postcss-color-function')
@@ -9,6 +10,7 @@ module.exports = options => ({
 	colors: true,
 	postcss: () => {
     return [
+			postcssMixins,
       postcssNested,
       autoprefixer,
 			postcssSimpleVars({ variables: () => require('../src/variables') }),
