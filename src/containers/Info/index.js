@@ -3,6 +3,10 @@ import Header from '../../components/Header'
 import styles from './style.css'
 
 class Info extends Component {
+  handleRegisterClick() {
+    openPopup()
+  }
+
   render() {
     return <div>
       <Header />
@@ -50,7 +54,7 @@ class Info extends Component {
             <p className={styles.text}>To stay up-to-date with our developments, register your email address. Alternatively, direct any questions you have to <a href="mailto:info@touch.farm">info@touch.farm</a>.</p>
 
             <p className={styles.text}>
-              <button className={styles.button}>Register</button>
+              <button className={styles.button} onClick={() => this.handleRegisterClick()}>Register now</button>
             </p>
           </div>
         </section>
