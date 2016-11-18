@@ -15,9 +15,9 @@ class Info extends Component {
         <section className={styles.block}>
           <div className={styles.content}>
             <h2>Data-driven farming</h2>
-            <p className={styles.text}>Real-time data in farming has consistently been shown to bring efficiency increases in water use by up to 30%.</p>
-            <p className={styles.text}>We are creating a platform which brings farmers and agronomists real-time visibility into soil moisture, soil temperature, nitrate levels and more. Applying irrigation and fertilizer only when required will save you money and produce a richer crop.</p>
-            <p className={styles.text}>Touch Farm is making precision agriculture accessible to farmers everywhere, by offering inexpensive hardware matched with intuitive software.</p>
+            <p className={styles.text}>Informed decision making is key to maximising crop yield and minimising wastage.</p> 
+            <p className={styles.text}>Touch Farm is making precision agriculture accessible to farmers everywhere, by offering inexpensive hardware matched with intuitive software. Gain insight into the state of your soil in real-time. Deploy a sensor grid over your fields for a picture that is truly representative of your soil's behaviour.</p>
+            <p className={styles.text}>Accurate data allows informed decision-making &ndash; which brings bigger profits to your farm.</p>
           </div>
         </section>
 
