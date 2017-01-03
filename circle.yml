@@ -19,8 +19,8 @@ dependencies:
     - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/gcloud-service-key.json
 
     # Make sure gcloud is up to date
-    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update --version 118.0.0
-    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update --version 118.0.0 kubectl
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update --version 120.0.0
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update --version 120.0.0 kubectl
 
     # Authenticate gcloud
     - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
