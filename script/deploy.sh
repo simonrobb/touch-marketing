@@ -1,5 +1,5 @@
 #! /bin/bash
-CLUSTER = $1
+CLUSTER=$1
 
 # Push image
 sudo /opt/google-cloud-sdk/bin/gcloud docker push $IMAGE_NAME:$CIRCLE_SHA1
