@@ -48,5 +48,5 @@ deployment:
 
       # Deploy application
       - sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials frontend-staging
-      - sed "s/<IMAGE_NAME>/$IMAGE_NAME/;s/<IMAGE_TAG>/$CIRCLE_SHA1/" < deployment.yaml.template > deployment.yaml
+      - sed "s#<IMAGE_NAME>#$IMAGE_NAME#;s#<IMAGE_TAG>#$CIRCLE_SHA1#" < deployment.yaml.template > deployment.yaml
       - kubectl apply -f deployment.yaml
