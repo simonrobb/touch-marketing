@@ -1,3 +1,4 @@
+#! /bin/bash
 CLUSTER = $1
 
 # Push image
