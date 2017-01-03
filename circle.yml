@@ -20,6 +20,7 @@ dependencies:
     - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/gcloud-service-key.json
 
     # Make sure gcloud is up to date
+    - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update
     - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update kubectl
 
     # Authenticate gcloud
@@ -43,10 +44,4 @@ deployment:
     owner: touch-tech
     branch: master
     commands:
-      # Push image
-      - sudo /opt/google-cloud-sdk/bin/gcloud docker push $IMAGE_NAME:$CIRCLE_SHA1
-
-      # Deploy application
-      - sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials frontend-staging
-      - sed "s#<IMAGE_NAME>#$IMAGE_NAME#;s#<IMAGE_TAG>#$CIRCLE_SHA1#" < deployment.yaml.template > deployment.yaml
-      - sudo kubectl apply -f deployment.yaml
+      - ./script/deploy.sh frontend-staging
