@@ -24,7 +24,7 @@ class Info extends Component {
         <section className={styles.block}>
           <div className={styles.content}>
             <h2>Quick and easy to start</h2>
-            <p className={styles.text}>Purchase Touch Farm hardware from your local distributer or our website, then download our app on your mobile device. You'll be stepped through 5-minute setup and then your sensors will be ready to plant. No third-party contractors required.</p>
+            <p className={styles.text}>Purchase Touch Farm hardware from your local distributer or our website, then download our app on your mobile device. You'll be stepped through the 5-minute setup and then your sensors will be ready to plant. No third-party contractors required.</p>
             <p className={styles.text}>If you ever need help with your Touch Farm installation, we offer free online support for as long as you need it.</p>
           </div>
         </section>

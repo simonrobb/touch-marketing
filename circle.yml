@@ -15,21 +15,22 @@ general:
 
 dependencies:
   pre:
-    # Install node modules
-    - npm install
-
-    # Download App Engine SDK
-    - curl -o $HOME/google_appengine_1.9.30.zip https://storage.googleapis.com/appengine-sdks/featured/google_appengine_1.9.30.zip
-    - unzip -q -d $HOME $HOME/google_appengine_1.9.30.zip
 
     # Retrieve our secrets from the CircleCI environment
-    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/client-secret.json
-
-    # Authenticate gcloud
-    - gcloud auth activate-service-account --key-file ${HOME}/client-secret.json
+    - echo $GCLOUD_SERVICE_KEY | base64 --decode > ${HOME}/gcloud-service-key.json
 
     # Make sure gcloud is up to date
     - sudo /opt/google-cloud-sdk/bin/gcloud --quiet components update kubectl
+
+    # Authenticate gcloud
+    - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
+
+    # Set region and project
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone asia-east1-a
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set project $GCLOUD_PROJECT
+
+    # Install node modules
+    - npm install
 
     # Build the application
     - npm run build
@@ -42,9 +43,10 @@ deployment:
     owner: touch-tech
     branch: master
     commands:
-      # Set gcloud project
-      - gcloud config set compute/zone asia-east1-a
-      - gcloud config set project $GCLOUD_PROJECT
-
       # Push image
-      - gcloud docker push $IMAGE_NAME:$CIRCLE_SHA1
+      - sudo /opt/google-cloud-sdk/bin/gcloud docker push $IMAGE_NAME:$CIRCLE_SHA1
+
+      # Deploy application
+      - sudo /opt/google-cloud-sdk/bin/gcloud container clusters get-credentials frontend-staging
+      - sed "s/<IMAGE_NAME>/$IMAGE_NAME/;s/<IMAGE_TAG>/$CIRCLE_SHA1/" < deployment.yaml.template > deployment.yaml
+      - kubectl apply -f deployment.yaml
