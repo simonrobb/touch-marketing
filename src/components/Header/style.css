@@ -1,10 +1,61 @@
-.container {
-  background: #4B5248;
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
 }
 
-.header {
+.light {
+  .link {
+    color: white;
+  }
+}
+
+.container {
   display: flex;
   align-items: center;
+}
+
+.left {
+  margin-right: auto;
+}
+
+.link,
+.button {
+  & + .link,
+  & + .button {
+    margin-left: 20px;
+  }
+}
+
+.link {
+  @mixin body2;
+  padding: 10px;
+  text-decoration: none;
+  text-align: center;
+  transition: all 0.15s;
+
+  /* Prevent link from changing width when bolded */
+  &::after {
+    display: block;
+    content: attr(title);
+    font-weight: bold;
+    height: 1px;
+    color: transparent;
+    overflow: hidden;
+    visibility: hidden;
+    margin-bottom: -1px;
+  }
+
+  &:hover {
+    color: $blue;
+  }
+
+  &.active {
+    font-weight: 600;
+    pointer-events: none;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -14,8 +65,8 @@
     }
   }
 
-  .header {
-    height: 50px;
+  .container {
+    height: 48px;
 
     img {
       width: 163px;
@@ -24,8 +75,8 @@
 }
 
 @media screen and (max-width: 767px) {
-  .header {
-    height: 40px;
+  .container {
+    height: 48px;
 
     img {
       width: 120px;
