@@ -49,6 +49,23 @@
   }
 }
 
+/* Secondary color */
+.secondary {
+  background: $green;
+  color: white;
+
+  &:hover   { background: color($green shade(10)); }
+  &:active  { background: color($green shade(20)); }
+
+  &.outline {
+    border: 1px solid $green;
+    color: $green;
+
+    &:hover   { background: color($green tint(95)); }
+    &:active  { background: color($green shade(20));}
+  }
+}
+
 /* Light color */
 .light {
   background: white;
