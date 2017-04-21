@@ -4,6 +4,13 @@
   left: 0;
   right: 0;
   z-index: 1000;
+  border-bottom: 1px solid transparent;
+  transition: all 0.15s;
+
+  &.scrolled {
+    background: white;
+    border-bottom-color: rgba(0,0,0,0.1);
+  }
 }
 
 .light {
@@ -34,6 +41,7 @@
   text-decoration: none;
   text-align: center;
   transition: all 0.15s;
+  color: $darkGray;
 
   /* Prevent link from changing width when bolded */
   &::after {

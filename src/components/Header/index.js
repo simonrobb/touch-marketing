@@ -9,15 +9,39 @@ export default class Header extends Component {
   constructor(props) {
     super(props);
 
+    this.handleScroll = this.handleScroll.bind(this);
+
     this.state = {
+      isScrolled: false,
       isLight: !!props.light
     };
   }
 
+  componentDidMount() {
+    window.addEventListener('scroll', this.handleScroll);
+  }
+
+  componentWillUnmount() {
+    window.removeEventListener('scroll', this.handleScroll);
+  }
+
+  handleScroll(event) {
+    if (!this.state.isScrolled && window.scrollY > 0) {
+      this.setState({ isScrolled: true });
+    }
+
+    else if (this.state.isScrolled && window.scrollY <= 0) {
+      this.setState({ isScrolled: false });
+    }
+  }
+
   render() {
+    const renderLight = this.state.isLight && !this.state.isScrolled;
+
     const classes = {
       [styles.header]: true,
-      [styles.light]: this.state.isLight,
+      [styles.light]: renderLight,
+      [styles.scrolled]: this.state.isScrolled,
       [this.props.className]: !!this.props.className
     };
 
@@ -28,7 +52,7 @@ export default class Header extends Component {
         <NavLink to="/software" exact className={styles.link} activeClassName={styles.active} title="Software">Software</NavLink>
         <NavLink to="/" exact className={styles.link}>Blog</NavLink>
         <NavLink to="/login" exact className={styles.button}>
-          <Button size="small" color={this.state.isLight ? 'light' : 'primary'} outline={true}>Login</Button>
+          <Button size="small" color={renderLight ? 'light' : 'primary'} outline={true}>Login</Button>
         </NavLink>
       </section>
     </div>;
