@@ -98,6 +98,13 @@ body {
   color: $bodyColor;
 }
 
+::selection {
+  background: color($green a(0.5));
+}
+::-moz-selection {
+  background: color($green a(0.5));
+}
+
 h2 {
   @mixin heading2;
 }

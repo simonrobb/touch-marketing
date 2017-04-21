@@ -3,19 +3,16 @@
   min-height: 270px;
   padding-top: 48px;
   padding-bottom: 36px;
+  border-top: 1px solid rgba(0,0,0,0.1);
 
   /* Themes */
   &:not(.light) {
-    border-top: 1px solid rgba(0,0,0,0.1);
-
     h4, .info {  color: rgba(0,0,0,0.35); }
     li {  }
   }
 
   &.light {
-    border-top: 1px solid rgba(255,255,255,0.1);
-
-    h4, .info {  color: rgba(255,255,255,0.4); }
+    h4, .info {  color: rgba(255,255,255,0.6); }
     li {  color: white; }
   }
 

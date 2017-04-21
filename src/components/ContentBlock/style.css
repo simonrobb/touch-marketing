@@ -1,4 +1,8 @@
 .container {
+  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.content {
   lost-column: 6/12;
   lost-offset: 1/12;
   box-sizing: border-box;
