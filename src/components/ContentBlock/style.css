@@ -2,10 +2,13 @@
   lost-column: 6/12;
   lost-offset: 1/12;
   box-sizing: border-box;
-  height: 100vh;
-  padding-top: 150px;
+  padding: 60px 0;
+
+  h2 {
+    @mixin heading3;
+  }
 
   p {
-    @mixin body1;
+    @mixin body2; 
   }
 }

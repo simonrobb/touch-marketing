@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import { Link } from 'react-router-dom'
 import Header from '../../components/Header'
 import Hero from '../../components/Hero'
+import Footer from '../../components/Footer'
 import Button from '../../components/Form/Button'
 import styles from './style.css'
 
@@ -22,6 +23,8 @@ class Index extends Component {
           <Button size="large" color="default">Register</Button>
         </div>
       </Hero>
+
+      <Footer />
     </div>
   }
 }

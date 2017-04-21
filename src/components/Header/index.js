@@ -26,8 +26,6 @@ export default class Header extends Component {
         <NavLink to="/" className={styles.left} activeClassName={styles.active}></NavLink>
         <NavLink to="/sensors" exact className={styles.link} activeClassName={styles.active} title="Sensors">Sensors</NavLink>
         <NavLink to="/software" exact className={styles.link} activeClassName={styles.active} title="Software">Software</NavLink>
-        <NavLink to="/ai" exact className={styles.link} activeClassName={styles.active} title="AI">AI</NavLink>
-        <NavLink to="/pricing" exact className={styles.link} activeClassName={styles.active} title="Pricing">Pricing</NavLink>
         <NavLink to="/" exact className={styles.link}>Blog</NavLink>
         <NavLink to="/login" exact className={styles.button}>
           <Button size="small" color={this.state.isLight ? 'light' : 'primary'} outline={true}>Login</Button>
