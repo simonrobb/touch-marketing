@@ -3,7 +3,8 @@ import { NavLink } from 'react-router-dom'
 import Button from '../Form/Button'
 import classNames from 'classnames'
 import styles from './style.css'
-import logo from './assets/Logo.svg'
+import logoDark from './assets/logo-dark.svg'
+import logoLight from './assets/logo-light.svg'
 
 export default class Header extends Component {
   constructor(props) {
@@ -46,8 +47,8 @@ export default class Header extends Component {
     };
 
     return <div className={classNames(classes)}>
-      <section className={styles.container}> 
-        <NavLink to="/" className={styles.left} activeClassName={styles.active}></NavLink>
+      <section className={styles.container}>
+        <NavLink to="/" className={styles.left} activeClassName={styles.active}><img src={renderLight ? logoLight : logoDark} className={styles.logo} alt="Touch Farm" /></NavLink>
         <NavLink to="/sensors" exact className={styles.link} activeClassName={styles.active} title="Sensors">Sensors</NavLink>
         <NavLink to="/software" exact className={styles.link} activeClassName={styles.active} title="Software">Software</NavLink>
         <NavLink to="/" exact className={styles.link}>Blog</NavLink>

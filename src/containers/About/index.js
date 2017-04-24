@@ -26,7 +26,7 @@ class Sensors extends Component {
       <ContentBlock>
         <h2>Our Team</h2>
         <p>We are an experienced, passionate group of hackers and thinkers.</p>
-        <p>No matter if you are a farmer, engineer or something else, we are always looking for talented people. If you think you can bring something special to the team, drop us an email at <a href="mailto:info@touch.farm">info@touch.farm</a>.</p>
+        <p>If you are a farmer, engineer or something else, we are always looking for talented people. If you think you can bring something special to the team, drop us an email at <a href="mailto:info@touch.farm">info@touch.farm</a>.</p>
       </ContentBlock>
 
       <Footer />
