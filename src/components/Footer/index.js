@@ -15,7 +15,7 @@ export default props => {
       <ul>
         <li><NavLink to="/about">About</NavLink></li>
         <li><NavLink to="/contact">Contact us</NavLink></li>
-        <li><NavLink to="/">Blog</NavLink></li>
+        <li><a href="https://medium.com/@touchfarm/latest">Blog</a></li>
       </ul>
     </div>
 

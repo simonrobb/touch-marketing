@@ -51,7 +51,7 @@ export default class Header extends Component {
         <NavLink to="/" className={styles.left} activeClassName={styles.active}><img src={renderLight ? logoLight : logoDark} className={styles.logo} alt="Touch Farm" /></NavLink>
         <NavLink to="/sensors" exact className={styles.link} activeClassName={styles.active} title="Sensors">Sensors</NavLink>
         <NavLink to="/software" exact className={styles.link} activeClassName={styles.active} title="Software">Software</NavLink>
-        <NavLink to="/" exact className={styles.link}>Blog</NavLink>
+        <a href="https://medium.com/@touchfarm/latest" className={styles.link}>Blog</a>
         <NavLink to="/login" exact className={styles.button}>
           <Button size="small" color={renderLight ? 'light' : 'primary'} outline={true}>Login</Button>
         </NavLink>
