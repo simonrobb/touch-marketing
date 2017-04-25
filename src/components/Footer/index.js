@@ -14,7 +14,7 @@ export default props => {
       <h4>Company</h4>
       <ul>
         <li><NavLink to="/about">About</NavLink></li>
-        <li><NavLink to="/">Contact us</NavLink></li>
+        <li><NavLink to="/contact">Contact us</NavLink></li>
         <li><NavLink to="/">Blog</NavLink></li>
       </ul>
     </div>
