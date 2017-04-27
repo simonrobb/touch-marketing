@@ -44,3 +44,9 @@ deployment:
     branch: master
     commands:
       - ./script/deploy.sh api-staging
+
+  production:
+    owner: touch-tech
+    branch: production
+    commands:
+      - ./script/deploy.sh frontend-production
