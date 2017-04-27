@@ -3,13 +3,17 @@ import classNames from 'classnames'
 import styles from './style.css'
 
 export default props => {
-  const {
+  let {
     color,
     size,
     outline
   } = props;
 
+  size = size || 'medium';
+  color = color || 'default';
+
   const classes = {
+    [props.className]: !!props.className,
     [styles.button]: true,
     [styles[size]]: !!styles[size],
     [styles[color]]: !!styles[color],

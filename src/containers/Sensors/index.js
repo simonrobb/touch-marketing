@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom'
 import Page from '../../components/Page'
 import Header from '../../components/Header'
 import Content from '../../components/Content'
@@ -7,6 +8,7 @@ import HeroContent from '../../components/Hero/Content'
 import HeroImage from '../../components/Hero/Image'
 import Footer from '../../components/Footer'
 import ContentBlock from '../../components/ContentBlock'
+import Button from '../../components/Form/Button'
 import styles from './style.css'
 import sensor from './assets/sensor@2x.png'
 
@@ -40,6 +42,18 @@ class Sensors extends Component {
         <ContentBlock>
           <h2>Wireless without mobile</h2>
           <p>Touch sensors are entirely self-contained.</p>
+        </ContentBlock>
+
+        <ContentBlock>
+          <h2>Easy to use</h2>
+          <p>Our sensors come with an app for your mobile device.</p>
+
+          <div className={styles.buttons}>
+            <Link to="/software" className={styles.button}>
+              <Button>Learn more</Button>
+            </Link>
+            <Button className={styles.button} color="primary">Register</Button>
+          </div>
         </ContentBlock>
       </Content>
 

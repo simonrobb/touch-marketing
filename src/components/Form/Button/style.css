@@ -19,6 +19,13 @@
     font-size: 14px;
   }
 
+  /* Medium size */
+  &.medium {
+    height: 36px;
+    padding: 0 24px;
+    font-size: 16px;
+  }
+
   /* Large size */
   &.large {
     height: 48px;

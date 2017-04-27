@@ -10,3 +10,14 @@
   width: 337px;
   height: 793px;
 }
+
+.buttons {
+  display: flex;
+  margin-top: 24px;
+
+  .button {
+    & + .button {
+      margin-left: 12px;
+    }
+  }
+}
