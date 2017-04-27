@@ -52,7 +52,7 @@ class Sensors extends Component {
             <Link to="/software" className={styles.button}>
               <Button>Learn more</Button>
             </Link>
-            <Button className={styles.button} color="primary">Register</Button>
+            <Button className={styles.button} color="primary" onClick={() => this.handleRegisterClick()}>Register</Button>
           </div>
         </ContentBlock>
       </Content>

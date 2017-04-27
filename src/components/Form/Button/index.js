@@ -20,7 +20,12 @@ export default props => {
     [styles.outline]: outline
   };
 
-  return <button className={classNames(classes)}>
+  const attrs = {
+    className: classNames(classes),
+    onClick: props.onClick
+  }
+
+  return <button {...attrs}>
     {props.children}
   </button>;
 }

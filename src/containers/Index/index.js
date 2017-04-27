@@ -23,7 +23,7 @@ class Index extends Component {
 
             <div className={styles.buttons}> 
               <Link to="/sensors"><Button size="large" color="secondary">Learn more</Button></Link>
-              <Button size="large" color="default">Register</Button>
+              <Button size="large" color="default" onClick={() => this.handleRegisterClick()}>Register</Button>
             </div>
           </HeroContent>
         </Hero>
