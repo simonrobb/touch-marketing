@@ -52,9 +52,9 @@ export default class Header extends Component {
         <NavLink to="/sensors" exact className={styles.link} activeClassName={styles.active} title="Sensors">Sensors</NavLink>
         <NavLink to="/software" exact className={styles.link} activeClassName={styles.active} title="Software">Software</NavLink>
         <a href="https://medium.com/@touchfarm/latest" className={styles.link}>Blog</a>
-        <NavLink to="/login" exact className={styles.button}>
+        {/*<NavLink to="/login" exact className={styles.button}>
           <Button size="small" color={renderLight ? 'light' : 'primary'} outline={true}>Login</Button>
-        </NavLink>
+        </NavLink>*/}
       </section>
     </div>;
   }
