@@ -1,16 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { Router, browserHistory } from 'react-router'
+import { 
+  BrowserRouter as Router 
+} from 'react-router-dom'
+import ScrollToTop from './components/Utility/ScrollToTop'
 
 import routes from './routes'
-const history = browserHistory
-
 render(routes)
 
 function render(_routes) {
   ReactDOM.render(
-    <Router history={history}>
-      <div>{_routes}</div>
+    <Router>
+      <ScrollToTop>
+        <div>{_routes}</div>
+      </ScrollToTop>
     </Router>,
     document.getElementById('root')
   )

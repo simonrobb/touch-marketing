@@ -44,7 +44,7 @@ module.exports = options => ({
 				]
 			},
       {
-        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2)$/,
+        test: /\.(jpg|png|gif|eot|svg|ttf|woff|woff2|otf)$/,
         loader: 'file-loader',
       },
 			{ 

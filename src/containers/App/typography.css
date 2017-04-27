@@ -1,18 +1,47 @@
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  font-weight: 400;
+  src: url("./assets/AktivGrotesk-Regular.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  font-weight: 500;
+  src: url("./assets/AktivGrotesk-Medium.otf") format("opentype");
+}
+
+@font-face {
+  font-family: 'Aktiv Grotesk';
+  font-weight: 700;
+  src: url("./assets/AktivGrotesk-Bold.otf") format("opentype");
+}
+
 @define-mixin heading2 {
-  font-weight: 300;
+  font-weight: 500;
 
   @media screen and (min-width: 1000px) {
     font-size: 48px;
     line-height: 60px;
-    letter-spacing: -0.012em;
-    margin-bottom: 18px;
   }
 
   @media screen and (max-width: 999px) {
     font-size: 36px;
     line-height: 44px;
     letter-spacing: -0.012em;
-    margin-bottom: 10px;
+  }
+}
+
+@define-mixin heading3 {
+  font-weight: 500;
+
+  @media screen and (min-width: 1000px) {
+    font-size: 36px;
+    line-height: 48px;
+  }
+
+  @media screen and (max-width: 999px) {
+    font-size: 36px;
+    line-height: 48px;
   }
 }
 
@@ -21,7 +50,7 @@
 
   @media screen and (min-width: 1000px) {
     font-size: 24px;
-    line-height: 32px;
+    line-height: 36px;
   }
 
   @media screen and (max-width: 999px) {
@@ -34,22 +63,34 @@
   font-weight: 400;
 
   @media screen and (min-width: 1000px) {
-    font-size: 18px;
-    line-height: 26px;
-    margin-bottom: 18px;
+    font-size: 20px;
+    line-height: 36px;
   }
 
   @media screen and (max-width: 999px) {
-    font-size: 16px;
-    line-height: 23px;
-    margin-bottom: 18px;
+    font-size: 20px;
+    line-height: 36px;
+  }
+} 
+
+@define-mixin body3 {
+  font-weight: 400;
+
+  @media screen and (min-width: 1000px) {
+    font-size: 14px;
+    line-height: 24px;
+  }
+
+  @media screen and (max-width: 999px) {
+    font-size: 14px;
+    line-height: 24px;
   }
 } 
 
 body,
 button,
 input {
-  font-family: 'Source Sans Pro', sans-serif;
+  font-family: 'Aktiv Grotesk', sans-serif;
   -webkit-font-smoothing: antialiased;
 }
 
@@ -57,16 +98,32 @@ body {
   color: $bodyColor;
 }
 
-h2 {
-  @mixin heading2
+::selection {
+  background: color($green a(0.5));
+}
+::-moz-selection {
+  background: color($green a(0.5));
 }
 
-p {
-  @mixin body1;
+h2 {
+  @mixin heading2;
+}
+
+p, li {
+  @mixin body3;
+
+  h2 + & {
+    margin-top: 36px;
+  }
+
+  p + &,
+  li + & {
+    margin-top: 24px;
+  }
 }
 
 a {
-  text-decoration: underline;
+  text-decoration: none;
   color: inherit;
 }
 

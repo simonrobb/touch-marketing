@@ -1,0 +1,30 @@
+.container {
+  
+}
+
+.content {
+  lost-column: 6/12;
+  lost-offset: 1/12;
+  box-sizing: border-box;
+  padding: 60px 0;
+
+  h2 {
+    @mixin heading3;
+  }
+
+  p {
+    @mixin body2; 
+  }
+
+  a {
+    color: $green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: color($green shade(10));
+    }
+  }
+}

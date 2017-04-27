@@ -1,6 +1,10 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router'
+import { Link } from 'react-router-dom'
 import Header from '../../components/Header'
+import Hero from '../../components/Hero'
+import HeroContent from '../../components/Hero/Content'
+import Footer from '../../components/Footer'
+import Button from '../../components/Form/Button'
 import styles from './style.css'
 
 class Index extends Component {
@@ -9,27 +13,23 @@ class Index extends Component {
   }
 
   render() {
-    return <div className={styles.container}>
-      <Header transparent={true} className={styles.header} />
-      <div className={styles.topGradient} />
-      <div className={styles.bottomGradient} />
+    return <div>
+      <Header transparent={true} light={true} className={styles.header} />
+      <div className={styles.hero}>
+        <Hero fullscreen={true}>
+          <HeroContent>
+            <h2>Touch Farm helps you farm more efficiently.</h2>
+            <p>Our soil moisture sensors improve the bottom line of broadacre, horticulture and cattle farms. Make confident decisions with the help of real-time data from your fields.</p>
 
-      <div className={styles.content}>
-        <div>
-          <section>
-            <div className={styles.text}>
-              <p className={styles.pitch}>Monitor farm metrics in real time from anywhere.</p>
-              <p className={styles.explain}>Our soil and atmospheric sensors are perfectly paired with intuitive software. Tend your crop precisely and efficiently.</p>
-
-              <div className={styles.register}>
-                <p className={styles.instruction}>Touch Farm is currently developing an inexpensive soil sensing solution for progressive farmers. You can register for updates and early entry to our testing programme by registering your email address.</p>
-                <button className={styles.button} onClick={() => this.handleRegisterClick()}>Register now</button>
-                <span className={styles.learn}>or, <Link to="/info">learn more</Link></span>
-              </div>
+            <div className={styles.buttons}> 
+              <Link to="/sensors"><Button size="large" color="secondary">Learn more</Button></Link>
+              <Button size="large" color="default" onClick={() => this.handleRegisterClick()}>Register</Button>
             </div>
-          </section>
-        </div>
+          </HeroContent>
+        </Hero>
       </div>
+
+      <Footer />
     </div>
   }
 }

@@ -1,0 +1,26 @@
+.sensorContainer {
+  lost-column: 2/12;
+  position: relative;
+}
+
+.sensor {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 100%;
+}
+
+.buttons {
+  display: flex;
+  margin-top: 36px;
+
+  a {
+    text-decoration: none !important;
+  }
+
+  .button {
+    & + .button {
+      margin-left: 12px;
+    }
+  }
+}

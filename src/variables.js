@@ -1,8 +1,14 @@
-const green = '#35BF3D'
+const green = '#8ECC17';
+const blue = '#43B9FF';
+const lightGray = '#DBDBDB';
+const darkGray = '#4A4A4A';
 
 module.exports = {
   green,
+  blue,
+  lightGray,
+  darkGray,
 
-  bodyColor: '#2D2B29',
+  bodyColor: darkGray,
   linkColor: green 
-}
+};
