@@ -31,7 +31,7 @@ export default props => {
       <div className={styles.info}>
         <h4>Who are Touch Farm?</h4>
         <p className={styles.blurb}>We are a data analytics company based in Melbourne, Australia. We are committed to furthering agricultural technology, for the benefit of farmers and broader society.</p>
-        <p className={styles.copyright}>Copyright &copy; 2017 Touch Farm</p>
+        <p className={styles.copyright}>Copyright &copy; 2017 Touch Farm | All Rights Reserved</p>
       </div>
     </section>
   </div>

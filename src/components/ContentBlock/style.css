@@ -15,4 +15,16 @@
   p {
     @mixin body2; 
   }
+
+  a {
+    color: $green;
+
+    &:hover {
+      text-decoration: underline;
+    }
+
+    &:active {
+      color: color($green shade(10));
+    }
+  }
 }

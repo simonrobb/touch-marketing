@@ -42,17 +42,19 @@ class Sensors extends Component {
         <ContentBlock>
           <h2>Wireless without mobile</h2>
           <p>Touch sensors are entirely self-contained.</p>
+          <p>Solar panels are integrated into the sensor; at ground level they'll never get in the way of your operations. They'll keep your sensors running indefinitely.</p>
+          <p>No mobile coverage? No problem. Sensors in the field use long-range radio to communicate with a small base station back home. This uses your farm wifi or ethernet to transmit sensor data to the cloud.</p>
         </ContentBlock>
 
         <ContentBlock>
           <h2>Easy to use</h2>
-          <p>Our sensors come with an app for your mobile device.</p>
+          <p>Touch Farm sensors are ready to use our software out-of-the-box. Monitor your farm in real-time, from anywhere.</p>
 
           <div className={styles.buttons}>
             <Link to="/software" className={styles.button}>
               <Button>Learn more</Button>
             </Link>
-            <Button className={styles.button} color="primary" onClick={() => this.handleRegisterClick()}>Register</Button>
+            <Button className={styles.button} color="secondary" onClick={() => this.handleRegisterClick()}>Register</Button>
           </div>
         </ContentBlock>
       </Content>
