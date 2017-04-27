@@ -7,13 +7,16 @@
   position: absolute;
   right: 0;
   top: 0;
-  width: 337px;
-  height: 793px;
+  width: 100%;
 }
 
 .buttons {
   display: flex;
   margin-top: 36px;
+
+  a {
+    text-decoration: none !important;
+  }
 
   .button {
     & + .button {
