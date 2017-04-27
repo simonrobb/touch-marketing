@@ -1,11 +1,25 @@
-.container {
-  lost-column: 6/12;
-  lost-offset: 1/12;
-  box-sizing: border-box;
-  height: 100vh;
+.hero {
+  position: relative;
   padding-top: 150px;
+  padding-bottom: 60px;
+  
+  &.fullscreen {
+    height: 100vh;
+  }
 
   p {
     @mixin body1;
   }
+}
+
+.heroContent {
+  position: relative;
+  lost-column: 6/12;
+  lost-offset: 1/12;
+}
+
+.heroImage {
+  position: relative;
+  lost-column: 3/12;
+  lost-offset: 1/12;
 }

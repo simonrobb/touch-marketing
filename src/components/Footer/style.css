@@ -1,9 +1,12 @@
 .container {
   box-sizing: border-box;
-  min-height: 270px;
+  border-top: 1px solid rgba(0,0,0,0.1);
   padding-top: 48px;
   padding-bottom: 36px;
-  border-top: 1px solid rgba(0,0,0,0.1);
+}
+
+.footer {
+  min-height: 190px;
 
   /* Themes */
   &:not(.light) {

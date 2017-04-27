@@ -1,4 +1,12 @@
-.page {
-  background: #3E4C54;
-  color: white;
+.sensorContainer {
+  lost-column: 2/12;
+  position: relative;
+}
+
+.sensor {
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 337px;
+  height: 793px;
 }
