@@ -26,7 +26,7 @@ dependencies:
     - sudo /opt/google-cloud-sdk/bin/gcloud auth activate-service-account --key-file ${HOME}/gcloud-service-key.json
 
     # Set region and project
-    - sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone asia-east1-a
+    - sudo /opt/google-cloud-sdk/bin/gcloud config set compute/zone asia-east1-b
     - sudo /opt/google-cloud-sdk/bin/gcloud config set project $GCLOUD_PROJECT
 
     # Install node modules
