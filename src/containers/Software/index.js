@@ -9,12 +9,24 @@ import HeroImage from '../../components/Hero/Image'
 import ContentBlock from '../../components/ContentBlock'
 import Button from '../../components/Form/Button'
 import Footer from '../../components/Footer'
+import RegisterModal from '../../components/RegisterModal'
 import styles from './style.css'
 import screenshot from './assets/screenshot@2x.png'
 
 class Sensors extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isRegisterOpen: false
+    };
+  }
   handleRegisterClick() {
-    openPopup()
+    this.setState({ isRegisterOpen: true });
+  }
+
+  handleRegisterClose() {
+    this.setState({ isRegisterOpen: false });
   }
 
   render() { 
@@ -56,6 +68,8 @@ class Sensors extends Component {
           </div>
         </ContentBlock>
       </Content>
+
+      <RegisterModal isOpen={this.state.isRegisterOpen} onClose={() => this.handleRegisterClose()} />
 
       <Footer />
     </Page>

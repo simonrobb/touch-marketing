@@ -1,25 +1,50 @@
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
+import classNames from 'classnames'
 import Button from '../Form/Button'
 import styles from './style.css'
 
 export default class RegisterModal extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      visible: false
+    };
+  }
 
   handleClose() {
-    this.props.onClose()
+    this.setState({ visible: false });
+    setTimeout(() => this.modalDidHide(), 400);
+  }
+
+  modalDidHide() {
+    this.props.onClose();
+  }
+
+  onAfterOpen() {
+    this.setState({ visible: true });
   }
 
   render() {
+    const modalClasses = {
+      [styles.modal]: true,
+      [styles.visible]: !!this.state.visible
+    };
+
     return <ReactModal 
       {...this.props} 
       contentLabel="Register" 
-      className={styles.modal}
+      className={classNames(modalClasses)}
       overlayClassName={styles.overlay}
+      onAfterOpen={() => this.onAfterOpen()}
     >
       <section>
         <div className={styles.form}>
-          <Button size="large" color="default" onClick={() => this.handleClose()}>Cancel</Button>
-          <Button size="large" color="primary" onClick={() => this.handleClose()}>Register</Button>
+          <div className={styles.buttons}>
+            <Button size="large" color="default" className={styles.button} onClick={() => this.handleClose()}>Cancel</Button>
+            <Button size="large" color="primary" className={styles.button} onClick={() => this.handleClose()}>Register</Button>
+          </div>
         </div>
 
         <div className={styles.text}>

@@ -12,7 +12,13 @@
   height: 100vh;
   width: 100vw;
   padding-top: 152px;
-  background: white;
+  background: rgba(255,255,255,0.95);
+  opacity: 0;
+  transition: opacity 400ms;
+
+  &.visible {
+    opacity: 1;
+  }
 }
 
 .form {
@@ -26,5 +32,15 @@
 
   p {
     @mixin body1;
+  }
+}
+
+.buttons {
+  display: flex;
+  
+  .button {
+     & + .button {
+       margin-left: 12px;
+     }
   }
 }
