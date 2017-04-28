@@ -1,0 +1,30 @@
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 1001;
+}
+
+.modal {
+  box-sizing: border-box;
+  height: 100vh;
+  width: 100vw;
+  padding-top: 152px;
+  background: white;
+}
+
+.form {
+  lost-offset: 1/12;
+  lost-column: 3/12;
+}
+
+.text {
+  lost-offset: 1/12;
+  lost-column: 6/12;
+
+  p {
+    @mixin body1;
+  }
+}

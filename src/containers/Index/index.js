@@ -5,11 +5,23 @@ import Hero from '../../components/Hero'
 import HeroContent from '../../components/Hero/Content'
 import Footer from '../../components/Footer'
 import Button from '../../components/Form/Button'
+import RegisterModal from '../../components/RegisterModal'
 import styles from './style.css'
 
 class Index extends Component {
+  constructor(props) {
+    super(props);
+
+    this.state = {
+      isRegisterOpen: false
+    };
+  }
   handleRegisterClick() {
-    openPopup()
+    this.setState({ isRegisterOpen: true });
+  }
+
+  handleRegisterClose() {
+    this.setState({ isRegisterOpen: false });
   }
 
   render() {
@@ -28,6 +40,8 @@ class Index extends Component {
           </HeroContent>
         </Hero>
       </div>
+
+      <RegisterModal isOpen={this.state.isRegisterOpen} onClose={() => this.handleRegisterClose()} />
 
       <Footer />
     </div>
