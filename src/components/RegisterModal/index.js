@@ -21,9 +21,10 @@ export default class RegisterModal extends Component {
     // Update UI
     this.setState({ status: '' })
 
+    // TODO: point at production api, when we have one
     // Perform the request
     axios
-      .post('http://localhost:8080/subscriptions', values)
+      .post('http://staging.api.touch.farm/subscriptions', values)
       .then(response => this.handleRegisterSuccess(response.data))
       .catch(error => this.handleRegisterError(error.response))
   }
