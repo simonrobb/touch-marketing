@@ -1,5 +1,6 @@
 import React, { Component } from 'react'
 import ReactModal from 'react-modal'
+import axios from 'axios'
 import classNames from 'classnames'
 import Button from '../Form/Button'
 import styles from './style.css'
@@ -9,13 +10,35 @@ export default class RegisterModal extends Component {
     super(props);
 
     this.state = {
-      visible: false
+      visible: false,
+      status: ''
     };
   }
 
-  handleClose() {
+  handleRegisterClick() {
+    // Update UI
+    this.setState({ status: '' })
+
+    // Construct the body of the subscription request
+    const body = {
+      emailAddress: 'simon+1@touch.farm',
+      firstName: 'Simon',
+      lastName: 'Robb'
+    }
+
+    // Perform the request
+    axios
+      .post('http://localhost:8080/subscriptions', body)
+      .then(response => this.handleRegisterSuccess(response.data))
+  }
+
+  handleCloseClick() {
     this.setState({ visible: false });
     setTimeout(() => this.modalDidHide(), 400);
+  }
+
+  handleRegisterSuccess(data) {
+    this.setState({ status: data.message })
   }
 
   modalDidHide() {
@@ -32,6 +55,8 @@ export default class RegisterModal extends Component {
       [styles.visible]: !!this.state.visible
     };
 
+    const statusEl = !!this.state.status ? <p>{this.state.status}</p> : null;
+
     return <ReactModal 
       {...this.props} 
       contentLabel="Register" 
@@ -41,9 +66,10 @@ export default class RegisterModal extends Component {
     >
       <section>
         <div className={styles.form}>
+          {statusEl}
           <div className={styles.buttons}>
-            <Button size="large" color="default" className={styles.button} onClick={() => this.handleClose()}>Cancel</Button>
-            <Button size="large" color="primary" className={styles.button} onClick={() => this.handleClose()}>Register</Button>
+            <Button size="large" color="default" className={styles.button} onClick={() => this.handleCloseClick()}>Cancel</Button>
+            <Button size="large" color="primary" className={styles.button} onClick={() => this.handleRegisterClick()}>Register</Button>
           </div>
         </div>
 
