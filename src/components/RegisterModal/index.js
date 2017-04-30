@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import ReactModal from 'react-modal'
 import axios from 'axios'
 import classNames from 'classnames'
+import RegisterForm from './form.js'
 import Button from '../Form/Button'
 import styles from './style.css'
 
@@ -11,34 +12,33 @@ export default class RegisterModal extends Component {
 
     this.state = {
       visible: false,
+      complete: false,
       status: ''
     };
   }
 
-  handleRegisterClick() {
+  handleSubmit(values) {
     // Update UI
     this.setState({ status: '' })
 
-    // Construct the body of the subscription request
-    const body = {
-      emailAddress: 'simon+1@touch.farm',
-      firstName: 'Simon',
-      lastName: 'Robb'
-    }
-
     // Perform the request
     axios
-      .post('http://localhost:8080/subscriptions', body)
+      .post('http://localhost:8080/subscriptions', values)
       .then(response => this.handleRegisterSuccess(response.data))
+      .catch(error => this.handleRegisterError(error.response))
   }
 
-  handleCloseClick() {
+  handleCancel() {
     this.setState({ visible: false });
     setTimeout(() => this.modalDidHide(), 400);
   }
 
   handleRegisterSuccess(data) {
-    this.setState({ status: data.message })
+    this.setState({ complete: true })
+  }
+
+  handleRegisterError(error) {
+    this.setState({ status: error.data.message })
   }
 
   modalDidHide() {
@@ -46,7 +46,7 @@ export default class RegisterModal extends Component {
   }
 
   onAfterOpen() {
-    this.setState({ visible: true });
+    this.setState({ visible: true, complete: false });
   }
 
   render() {
@@ -55,7 +55,35 @@ export default class RegisterModal extends Component {
       [styles.visible]: !!this.state.visible
     };
 
-    const statusEl = !!this.state.status ? <p>{this.state.status}</p> : null;
+    const confirmationEl = <section>
+      <div className={styles.confirmation}>
+        <h2>Thank you!</h2>
+        <p>Your email address has been added.</p>
+        <div className={styles.buttons}>
+          <Button 
+            className={styles.button}
+            type="button" 
+            color="default" 
+            size="large" 
+            onClick={() => this.handleCancel()}>Close</Button>
+        </div>
+      </div>
+    </section>
+
+    const registerEl = <section>
+      <div className={styles.registerForm}>
+        <RegisterForm 
+          status={this.state.status} 
+          onSubmit={values => this.handleSubmit(values)} 
+          onCancel={() => this.handleCancel()} />
+      </div>
+
+      <div className={styles.text}>
+        <h2>Stay updated by registering your interest.</h2>
+        <p>Thank you for your interest. We are currently testing our technology before beginning production.</p>
+        <p>If you would like to receive occasional emails about our sensors, please leave your name and email address.</p>
+      </div>
+    </section>
 
     return <ReactModal 
       {...this.props} 
@@ -64,21 +92,7 @@ export default class RegisterModal extends Component {
       overlayClassName={styles.overlay}
       onAfterOpen={() => this.onAfterOpen()}
     >
-      <section>
-        <div className={styles.form}>
-          {statusEl}
-          <div className={styles.buttons}>
-            <Button size="large" color="default" className={styles.button} onClick={() => this.handleCloseClick()}>Cancel</Button>
-            <Button size="large" color="primary" className={styles.button} onClick={() => this.handleRegisterClick()}>Register</Button>
-          </div>
-        </div>
-
-        <div className={styles.text}>
-          <h2>Stay updated by registering your interest.</h2>
-          <p>Thank you for your interest. We are currently testing our technology before beginning production.</p>
-          <p>If you would like to receive occasional emails about our sensors, please leave your name and email address.</p>
-        </div>
-      </section>
+      { !this.state.complete ? registerEl : confirmationEl }
     </ReactModal>
   }
 }

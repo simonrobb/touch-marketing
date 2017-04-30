@@ -86,6 +86,7 @@
     "react-chartjs-2": "^1.2.6",
     "react-datepicker": "^0.29.0",
     "react-dom": "^15.3.0",
+    "react-form": "^1.2.6",
     "react-hot-loader": "^3.0.0-beta.2",
     "react-modal": "^1.7.7",
     "react-router-dom": "^4.1.1",

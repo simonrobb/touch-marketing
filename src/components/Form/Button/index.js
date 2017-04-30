@@ -22,6 +22,7 @@ export default props => {
 
   const attrs = {
     className: classNames(classes),
+    type: props.type,
     onClick: props.onClick
   }
 

@@ -11,8 +11,7 @@
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
-  padding-top: 152px;
-  background: rgba(255,255,255,0.95);
+  background: rgba(255,255,255,1.0);
   opacity: 0;
   transition: opacity 400ms;
 
@@ -21,17 +20,153 @@
   }
 }
 
-.form {
-  lost-offset: 1/12;
-  lost-column: 3/12;
+.registerForm {
+  :global(.FormError) {
+    display: none !important;
+  }
 }
 
 .text {
-  lost-offset: 1/12;
-  lost-column: 6/12;
+  p {
+    @mixin body1;
+  }
+}
+
+.confirmation {
+  lost-column: 12/12;
+  text-align: center;
 
   p {
     @mixin body1;
+  }
+
+  .buttons {
+    margin-top: 24px;
+    justify-content: center;
+  }
+}
+
+@media (min-width: 1200px) {
+  .registerForm {
+    lost-offset: 1/12;
+    lost-column: 3/12;
+  }
+
+  .text {
+    lost-offset: 1/12;
+    lost-column: 6/12;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .registerForm {
+    lost-offset: 1/12;
+    lost-column: 5/12;
+  }
+
+  .text {
+    lost-column: 6/12;
+  }
+}
+
+@media (min-width: 800px) and (max-width: 999px) {
+  .registerForm {
+    lost-column: 6/12;
+  }
+
+  .text {
+    lost-column: 6/12;
+  }
+}
+
+@media (min-width: 800px) {
+  .modal {
+    padding-top: 152px;
+  }
+}
+
+@media (max-width: 799px) {
+  .modal {
+    padding-top: 24px;
+  }
+
+  .registerForm {
+    lost-column: 12/12;
+  }
+
+  .text {
+    lost-column: 12/12;
+    margin-top: 48px;
+  }
+}
+
+/* Generic form styles */
+.form {
+  .row {
+    width: 100%;
+
+    & + .row {
+      margin-top: 48px;
+    }
+
+    .controls {
+      display: flex;
+
+      & > * {
+        flex: 1 1 auto;
+
+        & + * {
+          margin-left: 12px;
+        }
+      }
+    }
+
+    label {
+      @mixin body2;
+      font-weight: 500;
+    }
+
+    input {
+      width: 100%;
+      height: 48px;
+      padding: 0 12px;
+      min-width: 0;
+      border: none;
+      border-radius: 5px;
+      background: #F7F7F7;
+      transition: background 150ms;
+      @mixin body1;
+
+      &:hover {
+        background: #F2F2F2;
+      }
+
+      &:focus {
+        background: #E8E8E8;
+        outline: 0;
+      }
+
+      &::-moz-placeholder { color: #CDCDCD; }
+      &::-webkit-input-placeholder { color: #CDCDCD; }
+      &:-ms-input-placeholder { color: #CDCDCD; }
+    }
+
+    :global(.FormInput.-hasError) {
+      input {
+        background: #FFDEE2;
+        color: #DE243B;
+
+        &::-moz-placeholder { color: #F4B0B8; }
+        &::-webkit-input-placeholder { color: #F4B0B8; }
+        &:-ms-input-placeholder { color: #F4B0B8; }
+      }
+    }
+
+    :global(.FormError) {
+      margin-top: 12px;
+      @mixin body3;
+      color: red;
+    }
   }
 }
 
