@@ -34,8 +34,8 @@ class Index extends Component {
             <p>Our soil moisture sensors improve the bottom line of broadacre, horticulture and cattle farms. Make confident decisions with the help of real-time data from your fields.</p>
 
             <div className={styles.buttons}> 
-              <Link to="/sensors"><Button size="large" color="secondary">Learn more</Button></Link>
-              <Button size="large" color="default" onClick={() => this.handleRegisterClick()}>I'm interested</Button>
+              <Link to="/sensors"><Button size="large" color="default">Learn more</Button></Link>
+              <Button size="large" color="secondary" onClick={() => this.handleRegisterClick()}>I'm interested</Button>
             </div>
           </HeroContent>
         </Hero>
