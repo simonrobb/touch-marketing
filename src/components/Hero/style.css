@@ -1,6 +1,5 @@
 .hero {
   position: relative;
-  padding-top: 150px;
   padding-bottom: 60px;
   
   &.fullscreen {
@@ -12,14 +11,61 @@
   }
 }
 
-.heroContent {
-  position: relative;
-  lost-column: 6/12;
-  lost-offset: 1/12;
-}
-
+.heroContent,
 .heroImage {
   position: relative;
-  lost-column: 3/12;
-  lost-offset: 1/12;
+}
+
+@media (min-width: 1200px) {
+  .heroContent {
+    lost-column: 6/12;
+    lost-offset: 1/12;
+  }
+
+  .heroImage {
+    lost-column: 3/12;
+    lost-offset: 1/12;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .heroContent {
+    lost-column: 7/12;
+  }
+
+  .heroImage {
+    lost-column: 4/12;
+    lost-offset: 1/12;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 999px) {
+  .heroContent {
+    lost-column: 8/12;
+  }
+
+  .heroImage {
+    lost-column: 4/12;
+  }
+}
+
+@media (min-width: 480px) {
+  .hero {
+    padding-top: 150px;
+  }
+}
+
+@media (max-width: 479px) {
+  .hero {
+    padding-top: 84px;
+  }
+
+  .heroContent {
+    lost-column: 12/12;
+  }
+
+  .heroImage {
+    lost-column: 6/12;
+    lost-offset: 3/12;
+  }
 }

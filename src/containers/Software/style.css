@@ -1,8 +1,17 @@
-.screenshot {
-  position: absolute;
-  right: 0;
-  top: 0;
-  width: 100%;
+@media (min-width: 480px) {
+  .screenshot {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 100%;
+  }
+}
+
+@media (max-width: 479px) {
+  .screenshot {
+    width: 100%;
+    margin-top: 36px;
+  }
 }
 
 .buttons {

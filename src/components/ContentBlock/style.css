@@ -3,13 +3,10 @@
 }
 
 .content {
-  lost-column: 6/12;
-  lost-offset: 1/12;
   box-sizing: border-box;
-  padding: 60px 0;
 
   h2 {
-    @mixin heading3;
+    @mixin heading3; 
   }
 
   p {
@@ -26,5 +23,37 @@
     &:active {
       color: color($green shade(10));
     }
+  }
+}
+
+@media (min-width: 1200px) {
+  .content {
+    lost-column: 6/12;
+    lost-offset: 1/12;
+  }
+}
+
+@media (min-width: 1000px) and (max-width: 1199px) {
+  .content {
+    lost-column: 7/12;
+  }
+}
+
+@media (min-width: 480px) and (max-width: 999px) {
+  .content {
+    lost-column: 8/12;
+  }
+}
+
+@media (min-width: 480px) {
+  .content {
+    padding: 60px 0;
+  }
+}
+
+@media (max-width: 479px) {
+  .content {
+    lost-column: 12/12;
+    padding: 36px 0;
   }
 }

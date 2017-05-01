@@ -11,6 +11,8 @@
   box-sizing: border-box;
   height: 100vh;
   width: 100vw;
+  overflow: auto;
+  -webkit-overflow-scrolling: touch;
   background: rgba(255,255,255,1.0);
   opacity: 0;
   transition: opacity 400ms;
@@ -82,12 +84,14 @@
 @media (min-width: 800px) {
   .modal {
     padding-top: 152px;
+    padding-bottom: 60px;
   }
 }
 
 @media (max-width: 799px) {
   .modal {
     padding-top: 24px;
+    padding-bottom: 24px;
   }
 
   .registerForm {

@@ -65,6 +65,12 @@
   }
 }
 
+@media (max-width: 479px) {
+  .blogLink {
+    display: none;
+  }
+}
+
 .button {
   display: flex;
   align-items: center;
