@@ -36,6 +36,9 @@ export default class RegisterModal extends Component {
 
   handleRegisterSuccess(data) {
     this.setState({ complete: true })
+
+    // Facebook ad tracking
+    fbq('track', 'Lead', {})
   }
 
   handleRegisterError(error) {
