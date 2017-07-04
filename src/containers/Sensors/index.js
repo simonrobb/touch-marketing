@@ -60,7 +60,7 @@ class Sensors extends Component {
 
         <ContentBlock>
           <h2>Easy to use</h2>
-          <p>Touch Farm sensors are ready to use our software out-of-the-box. Monitor your farm in real-time, from anywhere.</p>
+          <p>Touch Farm sensors are ready to use our software out-of-the-box. Monitor your farm in real time, from anywhere.</p>
 
           <div className={styles.buttons}>
             <Link to="/software" className={styles.button}>
